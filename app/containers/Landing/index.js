@@ -22,15 +22,15 @@ import { actToggleVisibility } from '../../containers/Main/actions';
 export class Landing extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   state = {
     images: [
-        { src: instrumental, mess: { ...messages.instrumental }, hovered: true },
-        { src: composition, mess: { ...messages.composition }, hovered: false },
-        { src: visual, mess: { ...messages.visual }, hovered: false },
-        { src: code, mess: { ...messages.code }, hovered: false },
+        { src: instrumental, message: { ...messages.instrumental }, hovered: true },
+        { src: composition, message: { ...messages.composition }, hovered: false },
+        { src: visual, message: { ...messages.visual }, hovered: false },
+        { src: code, message: { ...messages.code }, hovered: false },
     ],
   };
 
   getImages = () => this.state.images.map((image, key) => (
-    <LandingColumn key={key} image={image.src} hovered={image.hovered} onMouseHover={() => { this.hover(key); }} message={image.mess} />
+    <LandingColumn key={key} image={image.src} hovered={image.hovered} onMouseHover={() => { this.hover(key); }} message={image.message} />
   ))
 
   hover = (key) => {
