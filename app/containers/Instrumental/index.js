@@ -27,18 +27,18 @@ export class Instrumental extends React.PureComponent { // eslint-disable-line r
   .map((section, key) => (
     <Section
       key={key}
+      sectionKey={key}
       articles={section.articles}
       title={section.title}
+      activeArticle = {this.props.Instrumental.activeArticle}
+      handleClick ={(key, sectionKey) => this.props.setActiveArticle({key, sectionKey})}
     />))
 
   render() {
-    console.log(this.props.params.section)
     return (
       <Grid columns={1} >
         <PageHeader
-          handleClick={() => this.props.toggleVisibility(!this.props.Main.sidebar)}
           content={<FormattedMessage {...messages.header} />}
-          sidebarOpen={this.props.Main.sidebar}
         />
 
         <ChapterTitle content={this.props.Main.currentSection} />
@@ -49,8 +49,7 @@ export class Instrumental extends React.PureComponent { // eslint-disable-line r
   }
 }
 
-Instrumental.propTypes = {
-};
+Instrumental.propTypes = {};
 
 const mapStateToProps = createStructuredSelector({
   Instrumental: makeSelectInstrumental(),

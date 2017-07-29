@@ -14,7 +14,7 @@ import articlesRepertoir from '../../articles/instrumentalRepertoir.json';
 import articlesVideo from '../../articles/instrumentalVideos.json';
 
 const initialState = fromJS({
-  activeArticle: null,
+  activeArticle: { key: null,sectionKey: null},
   articles: {
     repertoir: articlesRepertoir,
     videos: articlesVideo,
@@ -26,7 +26,11 @@ const initialState = fromJS({
 function instrumentalReducer(state = initialState, action) {
   switch (action.type) {
     case SET_ACTIVE_ARTICLE:
-      return state.set('activeArticle', state.get('activeArticle') === action.payload ? null : action.payload);
+      return state
+      .set('activeArticle',
+      state.get('activeArticle').key === action.payload.key && state.get('activeArticle').sectionKey === action.payload.sectionKey ?
+      {sectionKey: null, key: null} : action.payload);
+      
     case DEFAULT_ACTION:
       return state;
     default:

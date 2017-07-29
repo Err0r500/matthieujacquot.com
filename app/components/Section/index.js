@@ -10,17 +10,17 @@ import Article from '../../components/Article';
 import SectionTitle from '../../components/SectionTitle';
 
 
-function Section({articles, title, activeArticle}) {
+function Section({sectionKey, articles, title, activeArticle, handleClick}) {
 const getArticles = (articles) => articles.map((article, key) => (
   <Article
     key={key}
     article={article}
-    handleClick={() => { this.props.setActiveArticle(key); }}
-    active={activeArticle === key}
+    handleClick={() => handleClick(key, sectionKey)}
+    active={activeArticle.key === key && activeArticle.sectionKey === sectionKey}
   />
 ))
   return (
-    <div>
+    <div className="column">
     <SectionTitle content={title} />
     {getArticles(articles)}
     </div>

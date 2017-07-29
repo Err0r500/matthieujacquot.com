@@ -22,6 +22,7 @@ export class Main extends React.PureComponent { // eslint-disable-line react/pre
     this.props.setCurrentSectionName(sectionName);
     this.props.router.push(`/${basePath}/${e}`);
   }
+  getIcon = () => this.props.Main.sidebar ? "angle double left" : "angle double right"
 
   render() {
     return (
@@ -33,7 +34,10 @@ export class Main extends React.PureComponent { // eslint-disable-line react/pre
         </Sidebar>
         <Sidebar.Pusher>
           <Segment basic>
+            <Button floated="left" icon={this.getIcon()} secondary onClick={() => this.props.toggleVisibility(!this.props.Main.sidebar)}></Button>
+          <Container>
             {React.Children.toArray(this.props.children)}
+            </Container>
           </Segment>
         </Sidebar.Pusher>
       </Sidebar.Pushable>
