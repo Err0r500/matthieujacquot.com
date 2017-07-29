@@ -18,7 +18,6 @@ export default function createRoutes(store) {
 
   return [
     {
-      // path: '/',
       name: 'main',
       getComponent(nextState, cb) {
         const importModules = Promise.all([
@@ -55,15 +54,33 @@ export default function createRoutes(store) {
             importModules.catch(errorLoading);
           },
         },
-      ],
-    }, {
-      path: '*',
-      name: 'notfound',
-      getComponent(nextState, cb) {
-        import('containers/NotFoundPage')
+        {
+          path: '/instrumental',
+          name: 'instrumental',
+          getComponent(nextState, cb) {
+            const importModules = Promise.all([
+              import('containers/Instrumental/reducer'),
+              import('containers/Instrumental'),
+            ]);
+
+            const renderRoute = loadModule(cb);
+
+            importModules.then(([reducer, component]) => {
+              injectReducer('instrumental', reducer.default);
+              renderRoute(component);
+            });
+
+            importModules.catch(errorLoading);
+          },
+        },
+      ] }, {
+        path: '*',
+        name: 'notfound',
+        getComponent(nextState, cb) {
+          import('containers/NotFoundPage')
           .then(loadModule(cb))
           .catch(errorLoading);
+        },
       },
-    },
   ];
 }
