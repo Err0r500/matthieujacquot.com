@@ -5,7 +5,7 @@
  */
 
 import React, { PropTypes } from 'react';
-import { Header, Container, Grid, Sidebar, Segment, Button, Menu, Image, Icon } from 'semantic-ui-react';
+import { Header, Container, Grid } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
@@ -22,7 +22,7 @@ import { actToggleVisibility } from '../../containers/Main/actions';
 export class Landing extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   state = {
     images: [
-        { src: instrumental, message: { ...messages.instrumental }, hovered: true },
+        { src: instrumental, message: { ...messages.instrumental }, hovered: false },
         { src: composition, message: { ...messages.composition }, hovered: false },
         { src: visual, message: { ...messages.visual }, hovered: false },
         { src: code, message: { ...messages.code }, hovered: false },
@@ -30,11 +30,14 @@ export class Landing extends React.PureComponent { // eslint-disable-line react/
   };
 
   getImages = () => this.state.images.map((image, key) => (
-    <LandingColumn key={key} image={image.src} hovered={image.hovered} onMouseHover={() => { this.hover(key); }} message={image.message} />
+    <LandingColumn key={key} image={image.src} hovered={image.hovered} onClick={() => { this.props.toggleVisibility(true); }} onMouseHover={() => { this.hover(key); }} message={image.message} />
   ))
 
   hover = (key) => {
-    this.state.images.map((image, imgkey) => { imgkey === key ? image.hovered = true : image.hovered = false; return false; });
+    this.state.images.map((image, imgkey) => {
+      imgkey === key ? this.state.images[imgkey].hovered = true : this.state.images[imgkey].hovered = false;
+      return false;
+    });
     this.forceUpdate();
   }
 
@@ -42,7 +45,6 @@ export class Landing extends React.PureComponent { // eslint-disable-line react/
     return (
       <Container textAlign="center">
         <Header as="h1" >
-          <Button onClick={() => {this.props.toggleVisibility(false)}}>Toggle Visibility</Button>
           <FormattedMessage {...messages.header} />
         </Header>
         <Grid centered verticalAlign="middle" style={{ height: 'calc(100vh - 100px)' }}>
@@ -63,7 +65,7 @@ const mapStateToProps = createStructuredSelector({
 
 function mapDispatchToProps(dispatch) {
   return {
-    toggleVisibility:  (payload) => (dispatch(actToggleVisibility(payload))),
+    toggleVisibility: (payload) => (dispatch(actToggleVisibility(payload))),
   };
 }
 

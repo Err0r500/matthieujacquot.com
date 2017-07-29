@@ -11,29 +11,18 @@ import { Header, Container, Grid, Sidebar, Segment, Button, Menu, Image, Icon } 
 import { createStructuredSelector } from 'reselect';
 import makeSelectMain from './selectors';
 import messages from './messages';
+import MenuInstrumental from '../../components/MenuInstrumental';
+import { actToggleVisibility } from './actions';
 
 export class Main extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
-  state = {
-    visible: false,
-  }
-  toggleVisibility = () => this.setState({ visible: !this.state.visible })
 
   render() {
     return (
       <Sidebar.Pushable as={Segment}>
         <Sidebar as={Menu} animation="push" width="wide" visible={this.props.Main.sidebar} icon="labeled" vertical inverted>
-          <Menu.Item name="home">
-            <Icon name="home" />
-                Home
-              </Menu.Item>
-          <Menu.Item name="gamepad">
-            <Icon name="gamepad" />
-                Games
-              </Menu.Item>
-          <Menu.Item name="camera">
-            <Icon name="camera" />
-                Channels
-              </Menu.Item>
+          <MenuInstrumental handleItemClick={() => this.props.toggleVisibility(false)} />
+          <MenuInstrumental handleItemClick={() => this.props.toggleVisibility(false)} />
+          <MenuInstrumental handleItemClick={() => this.props.toggleVisibility(false)} />
         </Sidebar>
         <Sidebar.Pusher>
           <Segment basic>
@@ -46,7 +35,6 @@ export class Main extends React.PureComponent { // eslint-disable-line react/pre
 }
 
 Main.propTypes = {
-  dispatch: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = createStructuredSelector({
@@ -55,7 +43,8 @@ const mapStateToProps = createStructuredSelector({
 
 function mapDispatchToProps(dispatch) {
   return {
-    dispatch,
+    toggleVisibility: (payload) => (dispatch(actToggleVisibility(payload))),
+
   };
 }
 

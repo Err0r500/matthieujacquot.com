@@ -15,7 +15,6 @@ export function defaultAction() {
   };
 }
 export function actToggleVisibility(payload) {
-  console.log(payload)
   return {
     type: SIDE_BAR_STATE,
     payload,
