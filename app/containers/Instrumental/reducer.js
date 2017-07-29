@@ -10,25 +10,17 @@ import {
   SET_ACTIVE_ARTICLE,
 } from './constants';
 
+import articlesRepertoir from '../../articles/instrumentalRepertoir.json';
+import articlesVideo from '../../articles/instrumentalVideos.json';
+
 const initialState = fromJS({
   activeArticle: null,
-  articles: [
-    {
-      section: 'videos',
-      title: 'titleBlabla',
-      body: 'contentBlabla',
-    },
-    {
-      section: 'discography',
-      title: 'titleBlabla2',
-      body: 'contentBlabla2',
-    },
-    {
-      section: 'discography',
-      title: 'titleBlabla3',
-      body: 'contentBlabla3',
-    },
-  ],
+  articles: {
+    repertoir: articlesRepertoir,
+    videos: articlesVideo,
+    discography: articlesVideo,
+    pedagogy: articlesVideo
+  }
 });
 
 function instrumentalReducer(state = initialState, action) {

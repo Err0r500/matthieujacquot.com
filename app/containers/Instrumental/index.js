@@ -18,10 +18,11 @@ import SectionTitle from '../../components/SectionTitle';
 import { actToggleVisibility } from '../../containers/Main/actions';
 import makeSelectMain from '../Main/selectors';
 
+
+
 export class Instrumental extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   getInstrumentalContent = (section) =>
-  this.props.Instrumental.articles
-  .filter((article) => article.section === section)
+  this.props.Instrumental.articles[section || "repertoir"]
   .map((article, key) => (
     <Article
       key={key}
@@ -32,6 +33,7 @@ export class Instrumental extends React.PureComponent { // eslint-disable-line r
   ));
 
   render() {
+    console.log(this.props.params.section)
     return (
       <Grid columns={1} >
         <PageHeader
