@@ -55,7 +55,7 @@ export default function createRoutes(store) {
           },
         },
         {
-          path: '/instrumental',
+          path: '/instrumental(/:section)',
           name: 'instrumental',
           getComponent(nextState, cb) {
             const importModules = Promise.all([

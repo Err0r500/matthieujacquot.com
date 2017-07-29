@@ -7,11 +7,13 @@
 import React from 'react';
 // import styled from 'styled-components';
 
+import { Header } from 'semantic-ui-react';
 
-function SectionTitle() {
+function SectionTitle({ content }) {
   return (
-    <div>
-    </div>
+    <Header as="h3" textAlign="center" className="column">
+      {content} sss
+    </Header>
   );
 }
 

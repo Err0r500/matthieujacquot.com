@@ -14,7 +14,7 @@ const initialState = fromJS({
   activeArticle: null,
   articles: [
     {
-      section: 'blabla',
+      section: 'Actualité',
       title: 'titleBlabla',
       body: 'contentBlabla',
     },

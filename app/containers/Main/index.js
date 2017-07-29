@@ -18,7 +18,7 @@ export class Main extends React.PureComponent { // eslint-disable-line react/pre
 
   render() {
     return (
-      <Sidebar.Pushable as={Segment}>
+      <Sidebar.Pushable as={Segment} style={{ minHeight: '100vh' }}>
         <Sidebar as={Menu} animation="push" width="wide" visible={this.props.Main.sidebar} icon="labeled" vertical inverted>
           <MenuInstrumental handleItemClick={() => this.props.toggleVisibility(false)} />
           <MenuInstrumental handleItemClick={() => this.props.toggleVisibility(false)} />

@@ -10,13 +10,13 @@ import { FormattedMessage } from 'react-intl';
 import messages from './messages';
 
 function MenuInstrumental({ activeItem, handleItemClick }) {
+  // <Menu.Item name="search" active={activeItem === 'search'} onClick={handleItemClick}>
+  //   <FormattedMessage {...messages.menu1} />
+  // </Menu.Item>
   return (
     <Menu.Item>
       <FormattedMessage {...messages.header} />
       <Menu.Menu>
-        <Menu.Item name="search" active={activeItem === 'search'} onClick={handleItemClick}>
-          <FormattedMessage {...messages.menu1} />
-        </Menu.Item>
         <Menu.Item name="add" active={activeItem === 'add'} onClick={handleItemClick}>
           <FormattedMessage {...messages.menu2} />
         </Menu.Item>

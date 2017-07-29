@@ -6,12 +6,13 @@
 
 import React from 'react';
 // import styled from 'styled-components';
+import { Header } from 'semantic-ui-react';
 
-
-function SubSectionTitle() {
+function SubSectionTitle({ content }) {
   return (
-    <div>
-    </div>
+    <Header as="h2" textAlign="center" className="column">
+      {content}
+    </Header>
   );
 }
 
