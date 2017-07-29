@@ -22,14 +22,14 @@ import makeSelectMain from '../Main/selectors';
 
 
 export class Instrumental extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
-  getInstrumentalContent = (section) =>
-  this.props.Instrumental.articles[section || "repertoir"]
-  .map((section, key) => (
+  getInstrumentalContent = (chapters) =>
+  this.props.Instrumental.articles[chapters || "repertoir"]
+  .map((chapter, key) => (
     <Section
       key={key}
       sectionKey={key}
-      articles={section.articles}
-      title={section.title}
+      articles={chapter.articles}
+      title={chapter.title}
       activeArticle = {this.props.Instrumental.activeArticle}
       handleClick ={(key, sectionKey) => this.props.setActiveArticle({key, sectionKey})}
     />))
@@ -41,9 +41,9 @@ export class Instrumental extends React.PureComponent { // eslint-disable-line r
           content={<FormattedMessage {...messages.header} />}
         />
 
-        <ChapterTitle content={this.props.Main.currentSection} />
+        <ChapterTitle content={this.props.Main.currentChapter} />
 
-        {this.getInstrumentalContent(this.props.params.section)}
+        {this.getInstrumentalContent(this.props.params.chapter)}
       </Grid>
     );
   }

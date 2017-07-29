@@ -12,15 +12,14 @@ import {
 
 const initialState = fromJS({
   sidebar: false,
-  currentSection: null,
+  currentChapter: null,
 });
 
 function mainReducer(state = initialState, action) {
   switch (action.type) {
     case SET_SECTION_NAME:
-      console.log(action);
       return state
-        .set('currentSection', action.payload);
+        .set('currentChapter', action.payload);
     case SIDE_BAR_STATE:
       return state
         .set('sidebar', action.payload);

@@ -20,7 +20,7 @@ function MenuInstrumental({ activeItem, handleItemClick }) {
   const getItems = () => menuItems.map((item, key) => {
     const path = `instrumental/${item.key}`;
     return (
-      <Menu.Item key={key} name={item.key} active={activeItem === path} onClick={() => handleItemClick(item.key, <FormattedMessage {...item.mess} />)}>
+      <Menu.Item key={key} name={item.key} active={activeItem === item.key} onClick={() => handleItemClick(item.key, <FormattedMessage {...item.mess} />)}>
         <FormattedMessage {...item.mess} />
       </Menu.Item>);
   });

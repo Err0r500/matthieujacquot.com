@@ -18,7 +18,6 @@ import { actToggleVisibility, actCurrentSectionName } from './actions';
 export class Main extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
   handleMenuClick = (e, sectionName, basePath) => {
-    console.log(e, sectionName, basePath);
     this.props.setCurrentSectionName(sectionName);
     this.props.router.push(`/${basePath}/${e}`);
   }
@@ -28,16 +27,19 @@ export class Main extends React.PureComponent { // eslint-disable-line react/pre
     return (
       <Sidebar.Pushable as={Segment} style={{ minHeight: '100vh' }}>
         <Sidebar as={Menu} animation="push" width="wide" visible={this.props.Main.sidebar} icon="labeled" vertical inverted>
+
+          <MenuInstrumental handleItemClick={(e, f) => this.handleMenuClick(e, f, 'instrumental')} activeItem={this.props.params.chapter} />
           <MenuInstrumental handleItemClick={(e, f) => this.handleMenuClick(e, f, 'instrumental')} />
-          <MenuInstrumental handleItemClick={() => this.props.toggleVisibility(false)} />
-          <MenuInstrumental handleItemClick={() => this.props.toggleVisibility(false)} />
+          <MenuInstrumental handleItemClick={(e, f) => this.handleMenuClick(e, f, 'instrumental')} />
         </Sidebar>
+
         <Sidebar.Pusher>
           <Segment basic>
+
             <Button floated="left" icon={this.getIcon()} secondary onClick={() => this.props.toggleVisibility(!this.props.Main.sidebar)}></Button>
-          <Container>
-            {React.Children.toArray(this.props.children)}
-            </Container>
+
+          <Container> {React.Children.toArray(this.props.children)} </Container>
+
           </Segment>
         </Sidebar.Pusher>
       </Sidebar.Pushable>
