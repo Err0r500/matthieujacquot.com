@@ -14,17 +14,17 @@ const initialState = fromJS({
   activeArticle: null,
   articles: [
     {
-      section: 'Actualité',
+      section: 'videos',
       title: 'titleBlabla',
       body: 'contentBlabla',
     },
     {
-      section: 'blabla',
+      section: 'discography',
       title: 'titleBlabla2',
       body: 'contentBlabla2',
     },
     {
-      section: 'blabla',
+      section: 'discography',
       title: 'titleBlabla3',
       body: 'contentBlabla3',
     },

@@ -14,12 +14,15 @@ import messages from './messages';
 import { actSetActiveArticle } from './actions';
 import Article from '../../components/Article';
 import PageHeader from '../../components/PageHeader';
-import SectionTitle from '../../components/SubSectionTitle';
+import SectionTitle from '../../components/SectionTitle';
 import { actToggleVisibility } from '../../containers/Main/actions';
 import makeSelectMain from '../Main/selectors';
 
 export class Instrumental extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
-  getInstrumentalContent = () => this.props.Instrumental.articles.map((article, key) => (
+  getInstrumentalContent = (section) =>
+  this.props.Instrumental.articles
+  .filter((article) => article.section === section)
+  .map((article, key) => (
     <Article
       key={key}
       article={article}
@@ -32,13 +35,14 @@ export class Instrumental extends React.PureComponent { // eslint-disable-line r
     return (
       <Grid columns={1} >
         <PageHeader
-        handleClick={() => this.props.toggleVisibility(!this.props.Main.sidebar)}
-        content={<FormattedMessage {...messages.header} />}
-        sidebarOpen={this.props.Main.sidebar}
+          handleClick={() => this.props.toggleVisibility(!this.props.Main.sidebar)}
+          content={<FormattedMessage {...messages.header} />}
+          sidebarOpen={this.props.Main.sidebar}
         />
-        <SectionTitle content={this.props.Instrumental.articles[0].section} />
 
-        {this.getInstrumentalContent()}
+        <SectionTitle content={this.props.Main.currentSection} />
+
+        {this.getInstrumentalContent(this.props.params.section)}
       </Grid>
     );
   }

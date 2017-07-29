@@ -12,7 +12,7 @@ import { Header } from 'semantic-ui-react';
 function SectionTitle({ content }) {
   return (
     <Header as="h3" textAlign="center" className="column">
-      {content} sss
+      {content}
     </Header>
   );
 }
