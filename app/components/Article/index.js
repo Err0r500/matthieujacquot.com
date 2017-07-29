@@ -18,7 +18,7 @@ function Article({ article, handleClick, active }) {
       <Card.Content>
         <ArticleTitle text={article.title} />
         <Button circular icon={getIcon()} toggle active={active} onClick={handleClick} />
-
+        <br />
         {active &&
           <ArticleBody text={article.body} />
         }

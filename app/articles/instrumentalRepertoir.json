@@ -1,15 +1,15 @@
 [
   {
     "key": "solo",
-    "title": "Autre Vidéos Musicales",
+    "title": "Solo",
     "articles": [
       {
-        "title": "fromJSONReptitle",
-        "body": "fromJsonBody"
+        "title": "Romantique",
+        "body": "<h4>Bruissements, l’Art de la miniature pour guitare</h4><p>Ignorées, abandonnées comme de minuscules miettes tombées aux pieds de la table de la grande musique, ce programme présente de petites pièces, toutes d’une attendrissante de modestie.<br>Si vous y trouvez un grand nom de la musique, ce sera pour une petite chose que tout le monde ou presque a déjà oublié, sinon ce seront les oeuvres d’humbles compositeurs : des Tarrega, des Sor, Carulli, Carcassi, Fossa, Murcia… tous de second rang mais qui, malgré leur terrible peine à batir des oeuvres d’envergure et à laisser une empreinte durable, eurent parfois de véritables éclairs de génies, créant alors de sublimes microcosmes.<br>La plupart étaient guitaristes eux-mêmes et toute la difficulté de l’interprete pour que puissent se révéler ces petites merveilles est d’aller au-dela du geste écrit sur la partition, l’évidence instrumentale, pour en extraire tout leur potentiel musical.<br>Quoi de mieux alors qu’un petit instrument comme la guitare? Elle qui fait si peu de bruit et a tant de difficultés dans la polyphonie mais qui excelle dans le détail des articulations et des couleurs.</p><ul><li>Programme :<ul><li>Dionisio Aguado “Pastorale” op10 n°17</li><li>Matteo Carcassi “Andantino” op5 n°4</li><li>Napoléon Coste “Leçon n°24”</li><li>Napoléon Coste “Barcarole”</li><li>François de Fossa “Campanella, étude sur les Folies d’Espagne”</li><li>Mauro Giuliani “Allegretto”</li><li>Miguel Llobet “El Testament d’Amelia”</li><li>Joseph Meissonnier “Andante”</li><li>Johan Kaspar Mertz “Romanze”</li><li>Nicolo Paganini “Romance” op35</li><li>Julio Sagreras “Leçon n°11”</li><li>Fernando Sor “Etude n°12” op31</li><li>Fernando Sor “Etude n°17” op35</li><li>Fernando Sor “Etude n°7” op35</li><li>Fernando Sor “Exercice n°22” op35</li><li>Francisco Tarrega “Prélude n°1”</li><li>Francisco Tarrega “Adelita”</li><li>Francisco Tarrega “Lagrima”</li></ul></li></ul>"
       },
       {
-        "title": "fromJSONtitle2",
-        "body": "fromJsonBody2"
+        "title": "In  the Woods",
+        "body": "<p>\"In the Woods\" est un programme de guitare contemporaine à l’athmosphère nocturne et mystérieuse. (à noter que pour des raisons de durée, le morceau intermédiaire est soit le Britten, soit le Henze).<br>Programme :</p><ul><li>Toru Takemitsu “In The Woods”</li><li>Benjamin Britten “Nocturnal”</li><li>Hans Werner Henze “Royal Winter Music II”</li><li>Tristan Murail “Tellur”</li></ul>"
       }
     ]
   },
