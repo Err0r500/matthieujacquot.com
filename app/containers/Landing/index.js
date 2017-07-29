@@ -7,6 +7,7 @@
 import React, { PropTypes } from 'react';
 import { Header, Container, Grid } from 'semantic-ui-react';
 import { connect } from 'react-redux';
+import { push } from 'react-router-redux';
 import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
 import makeSelectLanding from './selectors';
@@ -22,15 +23,22 @@ import { actToggleVisibility } from '../../containers/Main/actions';
 export class Landing extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   state = {
     images: [
-        { src: instrumental, message: { ...messages.instrumental }, hovered: false },
-        { src: composition, message: { ...messages.composition }, hovered: false },
-        { src: visual, message: { ...messages.visual }, hovered: false },
-        { src: code, message: { ...messages.code }, hovered: false },
+        { src: instrumental, message: { ...messages.instrumental }, hovered: false, path: '/instrumental/repertoir' },
+        { src: composition, message: { ...messages.composition }, hovered: false, path: '/instrumental' },
+        { src: visual, message: { ...messages.visual }, hovered: false, path: '/instrumental' },
+        { src: code, message: { ...messages.code }, hovered: false, path: '/code' },
     ],
   };
 
   getImages = () => this.state.images.map((image, key) => (
-    <LandingColumn key={key} image={image.src} hovered={image.hovered} onClick={() => { this.props.toggleVisibility(true); }} onMouseHover={() => { this.hover(key); }} message={image.message} />
+    <LandingColumn
+      key={key}
+      image={image.src}
+      hovered={image.hovered}
+      onClick={() => { this.props.router.push(`${image.path}`); }}
+      onMouseHover={() => { this.hover(key); }}
+      message={image.message}
+    />
   ))
 
   hover = (key) => {
