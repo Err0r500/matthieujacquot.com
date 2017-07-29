@@ -1,12 +1,30 @@
 [
-    {
-      "section": "videos",
-      "title": "fromJSONVideotitle",
-      "body": "fromJsonBody"
-    },
-    {
-      "section": "videos",
-      "title": "fromJSONtitle2",
-      "body": "fromJsonBody2"
-    }
+  {
+    "key": "videosMusicales",
+    "title": "Vidéos Musicales",
+    "articles": [
+      {
+        "title": "fromJSONVideotitle",
+        "body": "fromJsonBody"
+      },
+      {
+        "title": "fromJSONtitle2",
+        "body": "fromJsonBody2"
+      }
+    ]
+  },
+  {
+    "key": "videosAutre",
+    "title": "Autre Vidéos Musicales",
+    "articles": [
+      {
+        "title": "fromJSONVideotitle",
+        "body": "fromJsonBody"
+      },
+      {
+        "title": "fromJSONtitle3",
+        "body": "fromJsonBody4"
+      }
+    ]
+  }
 ]

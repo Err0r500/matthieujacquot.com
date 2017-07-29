@@ -14,7 +14,8 @@ import messages from './messages';
 import { actSetActiveArticle } from './actions';
 import Article from '../../components/Article';
 import PageHeader from '../../components/PageHeader';
-import SectionTitle from '../../components/SectionTitle';
+import ChapterTitle from '../../components/ChapterTitle';
+import Section from '../../components/Section';
 import { actToggleVisibility } from '../../containers/Main/actions';
 import makeSelectMain from '../Main/selectors';
 
@@ -23,14 +24,12 @@ import makeSelectMain from '../Main/selectors';
 export class Instrumental extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   getInstrumentalContent = (section) =>
   this.props.Instrumental.articles[section || "repertoir"]
-  .map((article, key) => (
-    <Article
+  .map((section, key) => (
+    <Section
       key={key}
-      article={article}
-      handleClick={() => { this.props.setActiveArticle(key); }}
-      active={this.props.Instrumental.activeArticle === key}
-    />
-  ));
+      articles={section.articles}
+      title={section.title}
+    />))
 
   render() {
     console.log(this.props.params.section)
@@ -42,7 +41,7 @@ export class Instrumental extends React.PureComponent { // eslint-disable-line r
           sidebarOpen={this.props.Main.sidebar}
         />
 
-        <SectionTitle content={this.props.Main.currentSection} />
+        <ChapterTitle content={this.props.Main.currentSection} />
 
         {this.getInstrumentalContent(this.props.params.section)}
       </Grid>

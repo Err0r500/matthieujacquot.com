@@ -1,12 +1,30 @@
 [
-    {
-      "section": "repertoir2",
-      "title": "fromJSONtitle",
-      "body": "fromJsonBody"
-    },
-    {
-      "section": "repertoir2",
-      "title": "fromJSONtitle2",
-      "body": "fromJsonBody2"
-    }
+  {
+    "key": "solo",
+    "title": "Autre Vidéos Musicales",
+    "articles": [
+      {
+        "title": "fromJSONReptitle",
+        "body": "fromJsonBody"
+      },
+      {
+        "title": "fromJSONtitle2",
+        "body": "fromJsonBody2"
+      }
+    ]
+  },
+  {
+    "key": "autre",
+    "title": "Autre Vidéos Musicales",
+    "articles": [
+      {
+        "title": "fromJSONVideotitle",
+        "body": "fromJsonBody"
+      },
+      {
+        "title": "fromJSONtitle3",
+        "body": "fromJsonBody4"
+      }
+    ]
+  }
 ]

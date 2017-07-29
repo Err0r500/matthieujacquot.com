@@ -1,9 +1,9 @@
 // import React from 'react';
 // import { shallow } from 'enzyme';
 
-// import SubSectionTitle from '../index';
+// import Section from '../index';
 
-describe('<SubSectionTitle />', () => {
+describe('<Section />', () => {
   it('Expect to have unit tests specified', () => {
     expect(true).toEqual(false);
   });
